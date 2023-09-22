@@ -1,9 +1,12 @@
 # E-Commerce API with Express & MongoDB
 
+v1.0.1
+
 ## Description
 
 This is a simple API for an e-commerce application. It uses Express.js for routing and MongoDB for the database. It has the following features:
 - CRUD operations for products and orders
+- CORS, Rate Limiting, and Sanitize middleware
 - User authentication with JWT
 - Image upload with Multer 
 - Pagination
@@ -46,7 +49,7 @@ npm start
 
 ### Authentication
 
-In the 1.0.0 version, this API uses JWT for authentication. You can register a user with the **/api/v1/register** endpoint. You can login with the **/api/v1/login** endpoint. You can get a user by JWT with the **/api/v1/me** endpoint. You can update a user with the **/api/v1/update-user/:id** endpoint. You can delete a user with the **/api/v1/delete-user/:id** endpoint.
+In this version, this API uses JWT for authentication. You can register a user with the **/api/v1/register** endpoint. You can login with the **/api/v1/login** endpoint. You can get a user by JWT with the **/api/v1/me** endpoint. You can update a user with the **/api/v1/update-user/:id** endpoint. You can delete a user with the **/api/v1/delete-user/:id** endpoint.
 
 #### Get all Users
 
@@ -99,15 +102,15 @@ DELETE /api/v1/delete-user/:id
 
 ### Categories
 
-In the 1.0.0 version, category feature is not included. It will be added in the next versions.
+In this version, category feature is not included. It will be added in the next versions.
 
 ### Products
 
-In the 1.0.0 version, product feature is not included. It will be added in the next versions.
+In this version, product feature is not included. It will be added in the next versions.
 
 ### Orders
 
-In the 1.0.0 version, order feature is not included. It will be added in the next versions.
+In this version, order feature is not included. It will be added in the next versions.
 
 
 ## Contributing
