@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
         required: true,
         max: 32
     },
-    gender:  {
+    pronounce:  {
         type: String,
         trim: true,
         required: true,
@@ -27,13 +27,13 @@ const userSchema = new mongoose.Schema({
         lowercase: true,
         unique: true
     },
-    passwordhash: {
+    password: {
         type: String,
         required: true,
     },
     role: {
         type: String,
-        default: "level0"
+        default: "user"
     },
     cart: {
         type: Array,
@@ -46,7 +46,17 @@ const userSchema = new mongoose.Schema({
     wishlist: {
         type: Array,
         default: []
-    }
+    },
+    reset: {
+        code: {
+          type: String,
+          default: null,
+        },
+        time: {
+          type: String,
+          default: null,
+        },
+      },
 }, { collection: "users" ,timestamps: true });
 
 const User = mongoose.model("User", userSchema);
