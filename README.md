@@ -1,19 +1,19 @@
 # E-Commerce API with Express & MongoDB
 
-v1.0.1
+v1.1.0
 
 ## Description
 
 This is a simple API for an e-commerce application. It uses Express.js for routing and MongoDB for the database. It has the following features:
 - CRUD operations for products and orders
-- CORS, Rate Limiting, and Sanitize middleware
-- User authentication with JWT
+- ✅CORS, Rate Limiting, and Sanitize middleware
+- ✅User authentication with JWT
 - Image upload with Multer 
 - Pagination
 - Filtering
 - Sorting
 - Searching
-- Error handling
+- ✅Error handling
 - Logging
 - Unit and integration testing 
 - Deployment to Vercel
@@ -35,8 +35,15 @@ npm install
 3. Create a .env file in the root directory and add the following environment variables
 
 ```bash
-PORT=5000
-MONGO_URI=your-mongodb-uri
+PORT = 5000
+
+MONGO_URI = your-mongodb-uri
+
+JWT_SECRET_KEY = <JWT_SECRET_KEY>
+JWT_EXPIRES_IN = "7d"
+
+JWT_TEMPORARY_KEY = <JWT_TEMPORARY_KEY>
+JWT_TEMPORARY_EXPIRES_IN = "3m"
 ```
 
 4. Run the app
@@ -77,7 +84,7 @@ GET /api/v1/me
 POST /api/v1/register
 ```
 
-- Body: firstname, lastname, gender, email, password
+- Body: firstname, lastname, pronounce, email, password
 
 #### Login a User
 
@@ -92,13 +99,13 @@ POST /api/v1/login
 ```http
 PATCH /api/v1/update-user/:id
 ```
+- Body: password, firstname, lastname
 
 #### Delete a User
 
 ```http
 DELETE /api/v1/delete-user/:id
 ```
-
 
 ### Categories
 
@@ -111,7 +118,6 @@ In this version, product feature is not included. It will be added in the next v
 ### Orders
 
 In this version, order feature is not included. It will be added in the next versions.
-
 
 ## Contributing
 
