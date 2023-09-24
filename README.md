@@ -1,6 +1,8 @@
 # E-Commerce API with Express & MongoDB
 
-v1.1.1
+v1.1.2
+
+### [Live Demo](https://ecommerce-api-berk.herokuapp.com/)
 
 ## Description
 
@@ -16,7 +18,7 @@ This is a simple API for an e-commerce application. It uses Express.js for routi
 - ✅Error handling
 - Logging
 - Unit and integration testing 
-- Deployment to Vercel
+- ✅Deployment to Vercel
 
 ## Installation
 

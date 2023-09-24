@@ -1,11 +1,13 @@
 {
   "name": "ecommerceapi",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "E-Commerce API with Express and MongoDB",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "build": "echo hello",
+    "vercel-build": "echo hello"
   },
   "repository": {
     "type": "git",
