@@ -2,7 +2,7 @@
 
 v1.1.2
 
-### [Live Demo](https://ecommerce-api-berk.herokuapp.com/)
+### [Live Demo](https://ecommerceapi-bhqwl3xdn-iamberk.vercel.app/)
 
 ## Description
 
