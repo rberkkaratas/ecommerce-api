@@ -1,5 +1,6 @@
 const user = require("../models/user.model");
-const bcrypt = require("bcrypt");
+const subscribe = require("../models/subscribe.model");
+// const bcrypt = require("bcrypt");
 const APIError = require("../utils/errors");
 const Response = require("../utils/response");
 const {
@@ -18,7 +19,7 @@ const login = async (req, res) => {
 
   if (!userInfo) throw new APIError("Email or password is incorrect!", 401);
 
-  const comparePassword = await bcrypt.compare(password, userInfo.password);
+  // const comparePassword = await bcrypt.compare(password, userInfo.password);
 
   if (!comparePassword)
     throw new APIError("Email or password is incorrect!", 401);
@@ -44,6 +45,30 @@ const register = async (req, res) => {
     .save()
     .then((data) => {
       return new Response(data, "User registered succesfully").created(res);
+    })
+    .catch((err) => {
+      throw new APIError("User can not registered, please try again!", 400);
+    });
+};
+
+const subscribeUser = async (req, res) => {
+  const { email } = req.body;
+
+  const userCheck = await subscribe.findOne({ email });
+
+  if (userCheck) {
+    throw new APIError(
+      "Email already exist, please enter a different email!",
+      401
+    );
+  }
+
+
+  const subscribeSave = new subscribe(req.body);
+  await subscribeSave
+    .save()
+    .then((data) => {
+      return new Response(data, "User subscribed succesfully").created(res);
     })
     .catch((err) => {
       throw new APIError("User can not registered, please try again!", 400);
@@ -215,4 +240,5 @@ module.exports = {
   getUserbyId,
   updateProfile,
   deleteUser,
+  subscribeUser
 };

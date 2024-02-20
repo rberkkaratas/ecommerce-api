@@ -9,7 +9,8 @@ const {
   getAllUsers,
   forgetPassword,
   resetCodeCheck,
-  resetPassword
+  resetPassword,
+  subscribeUser
 } = require("../controllers/auth.controller");
 const authValidation = require("../middlewares/validations/auth.validation");
 const { tokenCheck } = require("../middlewares/auth");
@@ -33,5 +34,7 @@ router.post("/reset-password", resetPassword); // validation needed, past passwo
 router.patch("/update-profile/:id", updateProfile); // validation needed
 
 router.delete("/delete-user/:id", deleteUser);
+
+router.post("/subscribe", subscribeUser );
 
 module.exports = router;
